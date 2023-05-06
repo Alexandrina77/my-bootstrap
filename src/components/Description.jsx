@@ -47,7 +47,7 @@ const Description = () => {
         <motion.div id='div1'
 
         initial={{
-          x:-1000,
+          x:-500,
           opacity: 0
         }}
 
@@ -60,8 +60,7 @@ const Description = () => {
           duration:2
         }}
         >
-          Complete documentation of the Framer Motion animation library. 
-          A production-ready motion library for React.</motion.div>
+          В нашей коллекции более 1000 работ, поэтому мы запустили бесплатные консультации с декораторами. Так что теперь подобрать работы для своего дома, картины для офиса или в подарок еще проще!</motion.div>
 
           <motion.div id='div2'
           initial={{
@@ -76,7 +75,7 @@ const Description = () => {
             duration:2
           }}>
             <motion.img
-            src='img/banner-new.jpeg'
+            src='img/banner-new.jpg'
             className='banner'
             width={850}
 
@@ -104,26 +103,7 @@ const Description = () => {
           transition={{
             duration:2
           }}>
-            <motion.img
-            src='img/ball.jpg'
-            className='ball'
-            width={200}
-
-            initial={{
-              opacity:0.6
-            }}
-
-            transition={{
-              duration:5
-            }}
-
-            whileHover={{
-              scale:1.5,
-              transition:{
-                duration:2
-              }
-            }}/>
-
+           
           </motion.div>
 
 
@@ -139,31 +119,14 @@ const Description = () => {
           transition={{
             duration:2
           }}>
-            <motion.img drag='x'
-            src='img/ball.jpg'
-            className='ball'
-            width={200}
-
-            initial={{
-              opacity:0.6
-            }}
-
-            transition={{
-              duration:5
-            }}
-
-            whileDrag={{
-              scale:1.5,
-             
-            }}/>
-
+           
           </motion.div>
 
             <motion.button className='btn btn-primary'
             whileHover={{
               scale:1.2
             }}>
-            Нажми</motion.button>
+            Подбор картин под Ваш интерьер</motion.button>
             </div>
 
     </div>

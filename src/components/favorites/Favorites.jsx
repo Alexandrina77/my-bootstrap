@@ -8,7 +8,7 @@ const Favorites = (props) => {
   const context = React.createContext(AppContext)
 
   const onAddOverlay = (obj) =>{
-    axios.post('https://637f91ca2f8f56e28e904e7d.mockapi.io/cart', obj)
+    axios.post('https://6452da92bce0b0a0f750e4ef.mockapi.io/cart', obj)
     context.setOverlayItems([...props.overlayItems, obj]);
   }
 
@@ -22,7 +22,7 @@ const Favorites = (props) => {
   return (
     <div>
       <div>
-        <h1 className='col-md-8 offset-md-2'>Избранные туры</h1>
+        <h1 className='col-md-8 offset-md-2'>Избранные картины</h1>
       </div>
     <div>
       {

@@ -9,11 +9,11 @@ const CardItem = (props) => {
     try{
       const findOverlay = props.overlayItems.find(objOver=> objOver.myId === obj.myId)
       if(findOverlay){
-        axios.delete(`https://637f91ca2f8f56e28e904e7d.mockapi.io/cart/${findOverlay.id}`)
+        axios.delete(`https://6452da92bce0b0a0f750e4ef.mockapi.io/cart/${findOverlay.id}`)
         props.setOverlayItems((over) => over.filter(o=>o.myId !== obj.myId))
       }
       else{
-        const {data} = await axios.post('https://637f91ca2f8f56e28e904e7d.mockapi.io/cart', obj)
+        const {data} = await axios.post('https://6452da92bce0b0a0f750e4ef.mockapi.io/cart', obj)
         props.setOverlayItems([...props.overlayItems, data])
       }
     }

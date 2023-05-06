@@ -16,19 +16,19 @@ import Description from './components/Description';
 export const AppContext = React.createContext({})
 
 function App() {
-//хранения данных туров
-const [tyrs, setTyrs] = useState([])
-//для избранных туров
+//хранения данных товаров
+const [products, setProducts] = useState([])
+//для избранных товаров
 const [favorites, setFavorites] = useState([])
 //для корзины
 const [overlayItems, setOverlayItems] = useState([])
 useEffect (()=>{
   async function axiosData(){
-    const tyrsData = await axios.get('https://637f91ca2f8f56e28e904e7d.mockapi.io/tyrs')
+    const productsData = await axios.get('https://6452da92bce0b0a0f750e4ef.mockapi.io/products')
     const favoritesData = await axios.get('https://637f91ca2f8f56e28e904e7d.mockapi.io/favorites')
-    const cartData = await axios.get('https://637f91ca2f8f56e28e904e7d.mockapi.io/cart')
+    const cartData = await axios.get('https://6452da92bce0b0a0f750e4ef.mockapi.io/cart')
 
-    setTyrs(tyrsData.data)
+    setProducts(productsData.data)
     setFavorites(favoritesData.data)
     setOverlayItems(cartData.data)
   }
@@ -37,7 +37,7 @@ useEffect (()=>{
 
 
 const deleteItems=(id)=>{
-  axios.delete(`https://637f91ca2f8f56e28e904e7d.mockapi.io/cart/${id}`)
+  axios.delete(`https://6452da92bce0b0a0f750e4ef.mockapi.io/cart/${id}`)
   setOverlayItems((objDelete)=> objDelete.filter(item=> item.id !==id))
 }
 
@@ -54,8 +54,8 @@ return (
   <AppContext.Provider
   value={
     {
-      tyrs,
-      setTyrs,
+      products,
+      setProducts,
       overlayItems,
       setOverlayItems,
       favorites,
@@ -75,7 +75,7 @@ return (
                         <Favorites
                         favorites={favorites}
                         setFavorites={setFavorites}
-                        item={tyrs}
+                        item={products}
                         overlayItems={overlayItems}
                         setOverlayItems={setOverlayItems}
                         />
@@ -86,7 +86,7 @@ return (
     <Route path='/'
                     element={
                         <Home
-                        item={tyrs}
+                        item={products}
                         overlayItems={overlayItems}
                         setOverlayItems={setOverlayItems}
                         favorites={favorites}
